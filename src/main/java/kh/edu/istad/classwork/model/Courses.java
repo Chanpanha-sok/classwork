@@ -9,11 +9,12 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="m2_courses")
+@Table(name = "m2_courses")
 @Setter
 @Getter
 @NoArgsConstructor
-public class courses {
+public class Courses {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column()
@@ -64,10 +65,11 @@ public class courses {
     @Column(nullable = false)
     private LocalDateTime updated_at;
 
-    @Column(nullable = false)
-    private Integer category_id;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Categories category;
 
-    @Column(nullable = false, length = 255)
-    private String instructor_id;
-
+    @ManyToOne
+    @JoinColumn(name = "instructor_id")
+    private Instruction_profiles instructor;
 }

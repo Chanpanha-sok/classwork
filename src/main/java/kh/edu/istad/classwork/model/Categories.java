@@ -13,10 +13,9 @@ import lombok.Setter;
 @Getter
 @Entity
 @NoArgsConstructor
-@Table(name="Categories")
+@Table(name="m2_categories")
 public class Categories {
     @Id
-    @Column()
     private Integer id;
     @Column(nullable = false)
     private Integer icon;

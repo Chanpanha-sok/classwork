@@ -11,8 +11,9 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 @NoArgsConstructor
-@Table(name="m2_Enrollments")
+@Table(name = "m2_Enrollments")
 public class Enrollments {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column()
@@ -30,10 +31,11 @@ public class Enrollments {
     @Column(nullable = false)
     private Boolean payment_status;
 
-    @Column(nullable = false)
-    private Integer course_id;
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Courses course;
 
-    @Column(nullable = false, length = 255)
-    private String student_id;
-
+    @ManyToOne
+    @JoinColumn(name = "student_id")
+    private Student_Profies student;
 }

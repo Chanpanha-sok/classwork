@@ -12,13 +12,13 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name="m2-Instruction_profiles ")
+@Table(name="m2_Instruction_profiles ")
 public class Instruction_profiles {
     @Id
-    @Column(, nullable = false, length = 255)
+    @Column( nullable = false, length = 255)
     private String user_id;
 
-    @Column(length = 255)
+    @Column(nullable = false, length = 255)
     private String biography;
 
     @Column(nullable = false, length = 255)

@@ -39,4 +39,6 @@ public class Video {
 
     @Column(nullable = false)
     private Integer course_id;
+
+
 }
